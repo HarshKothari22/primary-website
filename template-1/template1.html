@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template-1</title>
+    <style>
+        .custom-container {
+            max-width: 1170px;
+            width: 100%;
+            margin: auto;
+            padding: 10px;
+            /* align-items: center; */
+        }
+
+        .nav-links ul {
+            display: flex;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner-section {
+            background-image: url('template-1-images/slide.jpg');
+            text-align: center;
+        }
+
+        .nav-links ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            background-color: white;
+            position: -webkit-sticky;
+            /* what to do to fix the navigation*/
+            position: sticky;
+            top: 0;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            border-top: 2px solid transparent;
+        }
+
+        .nav-links li a:hover:not(.active) {
+            border-top: 2px solid red;
+        }
+
+        .nav-links .active {
+            border-top: 2px solid red;
+        }
+
+        .btn {
+            background-color: #ffffff40;
+            /* opacity: 0.5; */
+            color: #ffffff;
+            padding: 8px 13px;
+            border: 1px solid white;
+        }
+
+        .btn:hover {
+            background-color: #ffffff80;
+        }
+
+        .column1 {
+            float: left;
+            width: 22%;
+            padding: 15px;
+            text-align: center;
+
+        }
+
+        .row1 {
+            content: "";
+            display: table;
+            clear: both;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 21px;
+            color: #444444;
+            text-align: center;
+        }
+
+        .about p {
+            margin: 15px 0px 0px;
+            color: #444444;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .banner_text h1 {
+            font-size: 54px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 35px;
+            /* border-bottom: 1px solid white;
+    border-width: 10%; */
+        }
+
+        .banner_text p {
+            font-size: 30px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 35px;
+        }
+
+        .horizontal-line {
+            height: 1px;
+            width: 30%;
+            margin: auto;
+            background-color: white;
+        }
+
+        .space {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        /* .img_div{
+    width: 50px;
+    height: 50px;
+} */
+        .img_div {
+            width: 100%;
+        }
+
+        .img-block {
+            width: 50px;
+            height: 50px;
+            padding: 20px;
+            margin: auto;
+            transition: 0.5s;
+            border-radius: 100%;
+        }
+
+        .img-block img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-block:hover {
+            background-color: rgb(225, 88, 88);
+
+        }
+
+        .recent_works {
+            align-items: center;
+            /* flex-wrap: wrap; */
+        }
+
+        .recent_works p {
+            margin: auto;
+        }
+
+        .recent_works h2 {
+            margin: auto;
+        }
+
+        .horizontal-rule {
+            height: 1px;
+            width: 5%;
+            margin: auto;
+            background-color: red;
+
+        }
+
+        #sec2 {
+            background-color: #f7f7f7;
+
+        }
+
+        .sec3col {
+            /* float: left;
+  width: 30px;
+  padding: 15px;
+  text-align: center; */
+            /* padding: 15px;
+  display: flex;
+  text-align: center;
+  justify-content: flex-start;
+   flex-direction: column;
+  object-fit: cover; */
+            float: left;
+            width: 30%;
+            padding: 10px;
+            margin: auto;
+            justify-content: flex-start;
+            object-fit: cover;
+        }
+
+        .sec3row::after {
+            /* content: "";
+  display: table;
+  clear: both; */
+            /* text-align: left;
+  flex-direction: column;
+  flex-wrap: wrap;  */
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .sec3col p {
+            text-align: center;
+            padding: 10px;
+            color: #444444;
+
+        }
+
+        .sec3col h2 {
+            text-align: center;
+            padding: 10px;
+            color: #444444;
+        }
+
+        .heading_recents_works {
+            display: block;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .heading_recents_works p {
+            padding: 10px;
+            margin: 10px;
+            color: #444444;
+        }
+
+        .heading_recents_works h2 {
+            padding: 10px;
+            margin: 10px;
+            color: #444444;
+        }
+
+        .photo img {
+            width: 100%;
+        }
+
+        .button_block {
+            text-align: center;
+        }
+
+        .portbtn {
+
+            padding: 20px 30px;
+            border: 1px solid #ffffff;
+            background-color: #ffffff;
+            margin: 35px 0 0;
+        }
+
+        .portbtn:hover {
+            background-color: #ffffff40;
+        }
+
+
+        #portion {
+            background-image: url('template-1-images/bg.jpg');
+            /* text-align: center; */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+            margin: auto;
+            padding: 10px;
+        }
+
+        .port4 {
+            text-align: center;
+        }
+
+        .port4col {
+            float: left;
+            padding: 10px;
+            margin: auto;
+            color: #ffffff;
+        }
+
+        /* .port4row::after{ to understand the difference*/
+        .port4row {
+            content: "";
+            clear: both;
+            display: table;
+            text-align: center;
+            display: flex;
+        }
+
+        .port4col img {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+
+            margin: auto;
+        }
+
+        sym {
+            text-align: center;
+            margin: auto;
+        }
+
+        #services {
+            background-color: #ffffff;
+        }
+
+        .s1 {
+            text-align: center;
+            color: #444444;
+        }
+
+        .s1row {
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .s1col {
+            /* float: left; */
+            padding: 10px;
+            /* margin: auto; */
+            width: 31%;
+        }
+
+        .s1col img {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+
+            /* margin: auto; */
+        }
+
+        .s2 {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .s1col p {
+            text-align: left;
+            padding-left: 55px;
+        }
+
+        #Testimonials {
+            background-color: #f7f7f7;
+        }
+
+        .t1 {
+            color: #444444;
+            gap: 20px;
+        }
+
+        .t1 h1,
+        p {
+            text-align: center;
+        }
+
+        .t1row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-bottom: 40px;
+        }
+
+        .t1col {
+            padding: 10px;
+            width: 46%;
+            display: flex;
+            background-color: #ffffff;
+            /* height: unset; */
+            align-items: center;
+            gap: 0 35px;
+        }
+
+        .t1col img {
+            width: 75px;
+            height: 75px;
+            border: 1px solid white;
+            border-radius: 100%;
+            margin-top: 15px;
+
+        }
+
+        .t2 p {
+            text-align: left;
+        }
+
+        .t2 h2 span {
+            font-weight: lighter;
+            font-size: small;
+        }
+
+
+        #From_Blog {
+            background-color: #ffffff;
+        }
+
+        .fb {
+            text-align: center;
+        }
+
+        .fb1 {
+            display: flex;
+        }
+
+        .gallery {
+            margin: 0 10px;
+            width: 360px;
+            height: 250px;
+            overflow: hidden;
+
+        }
+
+        .gallery:hover img {
+            transform: scale(1.3);
+            opacity: 0.5;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .fb2 {
+            text-align: center;
+            font-weight: lighter;
+        }
+
+        #foot {
+            background-color: #444444;
+
+        }
+
+        .foot1 {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            border-bottom: #f7f7f7;
+        }
+
+        .foot1 a {
+            width: 190px;
+            height: 90px;
+            border-right: 1px solid #f7f7f7;
+        }
+
+        .foot1:first-child {
+            border-left: 1px solid #f7f7f7;
+        }
+
+        .foot1 a img {
+            display: flex;
+            padding: 20px;
+            margin: 0 40px;
+            width: 46px;
+            height: 46px;
+            border: 1px solid white;
+            border-radius: 100%;
+        }
+
+        .foot1 a img:hover {
+            background-color: #111;
+
+        }
+
+        .foot2 {
+            background-color: #444444;
+            color: #ffffff;
+        }
+
+        .footrow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+        .footcol {
+            /* content: "";
+  clear: both;
+  display: table; */
+            /* height: 40px; */
+            padding: 50px 0 0;
+            width: 23%;
+            text-align: center;
+        }
+
+        .footcol img {
+            width: 200px;
+            height: 48px;
+        }
+
+        .full-line {
+            border-bottom: 1px solid #f7f7f7;
+        }
+
+        .footcol pre {
+            margin: unset;
+        }
+
+        .footcol p {
+            margin: unset;
+        }
+
+        .fb2 h3 a {
+            color: #444444;
+            text-decoration: none;
+        }
+
+        .fb2 p a {
+            color: #444444;
+            text-decoration: none;
+            font-weight: lighter;
+            font-size: small;
+        }
+
+        .foot3 {
+            border-top: #f7f7f7;
+        }
+
+        .foot3 pre {
+            text-align: start;
+        }
+
+       .nav-links ul li a sup{
+    border: 1px solid #444444;
+    border-radius: 50%; 
+    background-color: #444444;
+    color: #ffffff;
+   
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="custom-container">
+            <div class="nav">
+                <div>
+                    <img src="template-1-images/logo.png" alt="logo">
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a class="active" href="#Home">#Home</a></li>
+                        <li><a href="#Pages">Pages</a></li>
+                        <li><a href="#Portfolio">Portfolio</a></li>
+                        <li><a href="#The Blog">The Blog</a></li>
+                        <li><a href="#Shortcodes">Shortcodes</a></li>
+                        <li><a href="#Start shopping"><img style="width: 20px;height: auto;"
+                                    src="template-1-images/shopping-basket.png" alt=""><sup>0</sup></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section>
+        <div class="banner-section container">
+            <div class="custom-container">
+                <div class="banner_text">
+                    <div class="space"></div>
+                    <h1>Primary - Made For Real Business</h1>
+                    <div class="horizontal-line"></div>
+
+                    <p>Every Line Of Code Is Made With Love</p>
+                    <div class="space"></div>
+                    <button class="btn"><b>Purchase Now</b></button>
+                    <div class="space"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-container">
+            <div class="about">
+
+                <div class="row1">
+
+                    <div class="column1">
+                        <div class="img_div">
+                            <div class="img-block">
+                                <img src="template-1-images/layers.png" alt="layers">
+                            </div>
+                        </div>
+                        <h2>Minimal Design</h2>
+                        <p>Remainder household direction zealously the unwilling roused enable estate</p>
+                    </div>
+
+                    <div class="column1">
+                        <div class="img_div">
+                            <div class="img-block">
+                                <img src="template-1-images/heart.png" alt="heart">
+                            </div>
+                        </div>
+                        <h2>Love Our Clients</h2>
+                        <p>Remainder household direction zealously the unwilling roused enable estate</p>
+                    </div>
+
+                    <div class="column1">
+                        <div class="img_div">
+                            <div class="img-block">
+                                <img src="template-1-images/customer-support.png" alt="customer support">
+                            </div>
+                        </div>
+                        <h2>Powerful & Flexible</h2>
+                        <p>Remainder household direction zealously the unwilling roused enable estate</p>
+                    </div>
+
+                    <div class="column1">
+                        <div class="img_div">
+                            <div class="img-block">
+                                <img src="template-1-images/globe.png" alt="globe">
+                            </div>
+                        </div>
+                        <h2>Premium Support</h2>
+                        <p>Remainder household direction zealously the unwilling roused enable estate</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+
+
+    <section id="sec2">
+        <div class="custom-container">
+            <div class="heading_recents_works">
+                <h2>Recents Works</h2>
+                <div class="horizontal-rule"></div>
+                <p>Best of the best</p>
+            </div>
+            <div class="recent_works">
+
+                <div class="sec3row">
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/11.jpg" alt="img-1">
+                        </div>
+                        <h2>Paint Drips</h2>
+                        <p>by jason travis</p>
+                    </div>
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/22.jpg" alt="img-2">
+                        </div>
+                        <h2>Pantone time!</h2>
+                        <p>by Jonathan Howell</p>
+                    </div>
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/33.jpg" alt="img-3">
+                        </div>
+                        <h2>House/RPG</h2>
+                        <p>by Eddie Lobanovskiy</p>
+                    </div>
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/44.png" alt="img-4">
+                        </div>
+                        <h2>Map pins-heart</h2>
+                        <p>by Eddie Lobanovskiy</p>
+                    </div>
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/55.jpg" alt="img-5">
+                        </div>
+                        <h2>Handbook for Brands</h2>
+                        <p>by Maykel Loomans</p>
+                    </div>
+
+                    <div class="sec3col">
+                        <div class="photo">
+                            <img src="template-1-images/66.jpg" alt="img-6">
+                        </div>
+                        <h2>First shot</h2>
+                        <p>by Tiago Calliari</p>
+                    </div>
+
+                </div>
+                <div class="button_block"><button class="portbtn">Load Full Portfolio</button></div>
+                <div class="space"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portion">
+        <div class="port4">
+            <div class="custom-container">
+                <div class="port4row">
+                    <div class="port4col">
+                        <div class="sym">
+                            <img src="template-1-images/happiness.png" alt="">
+                            <h1>841</h1>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="port4col">
+                        <div class="sym">
+                            <img src="template-1-images/scale-and-pencil.png" alt="">
+                            <h1>593</h1>
+                            <p>Projects Completed</p>
+                        </div>
+                    </div>
+                    <div class="port4col">
+                        <div class="sym">
+                            <img src="template-1-images/trophy.png" alt="">
+                            <h1>753</h1>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>
+                    <div class="port4col">
+                        <div class="sym">
+                            <img src="template-1-images/envelope.png" alt="">
+                            <h1>802</h1>
+                            <p>Letters Sent</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services">
+        <div class="custom-container">
+            <div class="s1">
+                <h2>Our Services</h2>
+                <div class="horizontal-rule"></div>
+                <p>Core Features</p>
+                <div class="s1row">
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/gear.png" alt="High Quality Code">
+                            <h4>High Quality Code</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/speedometer.png" alt="Seo Optimized">
+                            <h4>Seo Optimized</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/puzzle-piece.png" alt="Tons of Shortcodes">
+                            <h4>Tons of Shortcodes</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/responsive.png" alt="Responsive Ready">
+                            <h4>Responsive Ready</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/adjustment.png" alt="Easy to Custmizoe">
+                            <h4>Easy to Custmizoe</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                    <div class="s1col">
+                        <div class="s2">
+                            <img src="template-1-images/search.png" alt="Well Documented">
+                            <h4>Well Documented</h4>
+                        </div>
+                        <p>Remainder household direction zealously the unwilling. Roused enabl estate old county</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="Testimonials">
+        <div class="custom-container">
+            <div class="t1">
+                <h1>Testimonials</h1>
+                <div class="horizontal-rule"></div>
+                <p>Happy Costumers</p>
+
+                <div class="t1row">
+                    <div class="t1col">
+                        <img src="template-1-images/jhon_doe.jpg" alt="Jhon Doe">
+                        <div class="t2">
+                            <h2>John Doe<span>- Google Inc.</span></h2>
+                            <p>General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                                To unreserve projection introduced invitation travel</p>
+                        </div>
+                    </div>
+                    <div class="t1col">
+                        <img src="template-1-images/user-2.png" alt="jhon_romer">
+                        <div class="t2">
+                            <h2>john_romer<span>- Twitter Inc.</span></h2>
+                            <p>General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                                To unreserve projection introduced invitation travel</p>
+                        </div>
+                    </div>
+                    <div class="t1col">
+                        <img src="template-1-images/user-1.png" alt="Mila Markovna">
+                        <div class="t2">
+                            <h2>Mila Markovna<span>- Apple Inc.</span></h2>
+                            <p>General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                                To unreserve projection introduced invitation travel</p>
+                        </div>
+                    </div>
+                    <div class="t1col">
+                        <img src="template-1-images/user-3.png" alt="michel_artez">
+                        <div class="t2">
+                            <h2>miraya_artez<span>- Yahoo Inc.</span></h2>
+                            <p>General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                                To unreserve projection introduced invitation travel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="From_Blog">
+        <div class="custom-container">
+            <div class="fb">
+                <h1>From Blog</h1>
+                <div class="horizontal-rule"></div>
+                <p>Awesome post</p>
+                <div class="fb1">
+                    <div class="fb2">
+                        <div class="gallery">
+                            <img src="template-1-images/blog1.jpg" alt="blog1">
+                        </div>
+                        <h3><a href="#">You fully seems stand inquietude own</a></h3>
+                        <p><a href="#">18 January, 2017 by DankovThemes, in Envato</a></p>
+                    </div>
+                    <div class="fb2">
+                        <div class="gallery">
+                            <img src="template-1-images/blog2.jpg" alt="blog2">
+                        </div>
+                        <h3><a href="#">Conduct esteems by cottage to pasture</a></h3>
+                        <p><a href="#">10 February, 2017 by DankovThemes, in Funny</a></p>
+                    </div>
+                    <div class="fb2">
+                        <div class="gallery">
+                            <img src="template-1-images/blog3.jpg" alt="blog3">
+                        </div>
+                        <h3><a href="#">Learning why hastened small cheerful</a></h3>
+                        <p><a href="#">17 January, 2017 by DankovThemes, in Travel</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="foot">
+        <div class="full-line">
+            <div class="custom-container">
+                <div class="foot1">
+
+                    <a href="https://www.facebook.com/"><img src="template-1-images/facebook.png" alt="facebook"></a>
+                    <a href="https://twitter.com/"><img src="template-1-images/twitter.png" alt="twitter"></a>
+                    <a
+                        href="https://workspaceupdates.googleblog.com/2023/04/new-community-features-for-google-chat-and-an-update-currents%20.html"><img
+                            src="template-1-images/google_plus.png" alt="google_plus"></a>
+                    <a href="https://dribbble.com/"><img src="template-1-images/dribbble.png" alt="dribbble"></a>
+                    <a href="https://www.linkedin.com/"><img src="template-1-images/linkedin.png" alt="linkedin"></a>
+                    <a href="https://html.dankov-themes.com/primary/#"><img src="template-1-images/rss.png"
+                            alt="rss"></a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="foot2">
+            <div class="custom-container">
+                <div class="footrow">
+                    <div class="footcol">
+
+                        <img src="template-1-images/logo_footer.png" alt="logo">
+                        <p>Can curiosity may end shameless explained. True high on said mr on come. Attended of on
+                            stronger or mr pleasure. Rich four like real yet west get. His pleasure new steepest for
+                            reserved formerly disposed jennings. Projection at literature insensible motionless
+                            projecting.</p>
+                    </div>
+                    <div class="footcol">
+                        <h3>Get in Touch</h3>
+                        <p>Adress: 455 Martinson, Los Angeles</p>
+                        <p>Phone: 8 (043) 567 - 89 - 30</p>
+                        <p>Skype: companyname</p>
+                        <p>E-mail: support@email.com</p>
+                        <p>Weekend: from 9 am to 6 pm</p>
+                    </div>
+                    <div class="footcol">
+                        <h3>Categories</h3>
+                        <pre>
+            <p>Envato                1</p>
+            <p>Funny                 1</p>
+            <p>Politics              2</p>
+            <p>Themeforest           1</p>
+            <p>Travel                1</p>
+            </pre>
+                    </div>
+                    <div class="footcol">
+                        <h3>Flickr Photos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-container">
+            <div class="foot3">
+                <pre><p>Copyright © 2017 Primary. Design by DankovThemes                                                                             Home |About Us |Blog|Services |Purchase</p></pre>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
